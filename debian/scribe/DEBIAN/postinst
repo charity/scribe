@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installinit
+if [ -x "/etc/init.d/scribe" ]; then
+	if [ ! -e "/etc/init/scribe.conf" ]; then
+		update-rc.d scribe defaults >/dev/null
+	fi
+	invoke-rc.d scribe start || exit $?
+fi
+# End automatically added section

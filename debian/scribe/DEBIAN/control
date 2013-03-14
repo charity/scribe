@@ -1,0 +1,11 @@
+Package: scribe
+Version: 2.0.0-1
+Architecture: amd64
+Maintainer: Charity Majors <charity@parse.com>
+Installed-Size: 845
+Depends: libboost-filesystem1.46.1 (>= 1.46.1-1), libboost-system1.46.1 (>= 1.46.1-1), libc6 (>= 2.14), libevent-2.0-5 (>= 2.0.16-stable), libgcc1 (>= 1:4.1.1), libstdc++6 (>= 4.4.0), libthrift0
+Section: unknown
+Priority: extra
+Homepage: <insert the upstream URL, if relevant>
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>

@@ -1,0 +1,15 @@
+Source: scribe
+Section: unknown
+Priority: extra
+Maintainer: Charity Majors <charity@parse.com>
+Build-Depends: debhelper (>= 7), autotools-dev, libthrift-dev, libfb303, libboost-system-dev, libboost-filesystem-dev, libc6-dev, libstdc++6-4.4-dev, libevent-dev, libhdfs0-dev, thrift-compiler
+Standards-Version: 3.9.2
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Git: git://git.debian.org/collab-maint/scribe.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/scribe.git;a=summary
+
+Package: scribe
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>

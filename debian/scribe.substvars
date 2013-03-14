@@ -1,0 +1,2 @@
+shlibs:Depends=libboost-filesystem1.46.1 (>= 1.46.1-1), libboost-system1.46.1 (>= 1.46.1-1), libc6 (>= 2.14), libevent-2.0-5 (>= 2.0.16-stable), libgcc1 (>= 1:4.1.1), libstdc++6 (>= 4.4.0), libthrift0
+misc:Depends=

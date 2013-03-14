@@ -1,0 +1,76 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+override_dh_auto_configure:
+	[ -f configure ] || ./bootstrap.sh
+	$(CURDIR)/configure CPPFLAGS="-DHAVE_INTTYPES_H -DHAVE_NETINET_IN_H -DBOOST_FILESYSTEM_VERSION=2" LIBS="-lboost_system -lboost_filesystem" --with-thriftpath=/usr --with-fb303path=/usr --prefix=/usr
+	#$(CURDIR)/configure CPPFLAGS="-DHAVE_INTTYPES_H -DHAVE_NETINET_IN_H -DBOOST_FILESYSTEM_VERSION=2" LIBS="-lboost_system -lboost_filesystem" --with-thriftpath=/usr --with-fb303path=/usr --prefix=/usr --enable-hdfs --with-hadooppath=/usr/lib
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+
+	# -- scribe
+	# Note that the scribe package also installs python scribe scripts, 
+	# so it requires that scribe python bindings are installed.  But, 
+	# since scribe python bindings themselves require scribe, this is a 
+	# circular dependency.  The packaging from simplegeo 
+	# (https://github.com/simplegeo/scribe) solves this by including
+	# the python scribe bindings in the scribe package itself.
+
+	# Add here commands to install the package into debian/scribe.
+	$(MAKE) DESTDIR=$(CURDIR)/debian/scribe install
+	cp $(CURDIR)/examples/scribe_cat $(CURDIR)/debian/scribe/usr/bin
+	cp $(CURDIR)/examples/scribe_ctrl $(CURDIR)/debian/scribe/usr/bin
+	mkdir -p $(CURDIR)/debian/scribe/etc/scribe
+	cp $(CURDIR)/debian/scribe.conf $(CURDIR)/debian/scribe/etc/scribe/scribe.conf
+	find ${CURDIR}/debian/scribe -name \*.pyc -exec rm {} \;
+
+
+binary-indep: build install
+
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs
+	dh_installdocs
+	dh_installexamples
+#       dh_install
+#       dh_installmenu
+#       dh_installdebconf
+#       dh_installlogrotate
+#       dh_installemacsen
+#       dh_installpam
+#       dh_installmime
+#       dh_python
+	dh_installinit
+#       dh_installcron
+#       dh_installinfo
+	dh_installman
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+#       dh_perl
+#       dh_makeshlibs
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+
+%:
+	dh $@ 
+

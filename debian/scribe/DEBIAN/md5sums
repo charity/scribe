@@ -1,0 +1,14 @@
+bc48fc7869164e833b65b3f8b3055fca  usr/bin/scribe_cat
+18d698ac5bc44800566b498e99b2083f  usr/bin/scribe_ctrl
+2198c0bce70f75b77469f05a08e645f2  usr/bin/scribed
+c05762a18e1168222b502b47832af108  usr/lib/libdynamicbucketupdater.a
+6a96d3edf9c1bbe898b6485b1196996d  usr/lib/libscribe.a
+d70890f9e058cd37fea484152ac0dbac  usr/lib/python2.7/site-packages/scribe-2.0-py2.7.egg-info
+1849b0ede85e805284903d67b21e3c58  usr/lib/python2.7/site-packages/scribe/__init__.py
+14e2d529821f06f285353a86634e673b  usr/lib/python2.7/site-packages/scribe/constants.py
+bb38174a99d89b275aa7866b6ca576ac  usr/lib/python2.7/site-packages/scribe/scribe.py
+3041723eda91a0d015bb313681f9b079  usr/lib/python2.7/site-packages/scribe/ttypes.py
+f89e249f4513f30eeef2123114795cbe  usr/share/doc/scribe/README.Debian
+542965ea3992ee0384e3b9552e05122c  usr/share/doc/scribe/README.gz
+ecc5aafb9b3493fd97d557015d8dbb8c  usr/share/doc/scribe/changelog.Debian.gz
+09815708000175d1c6f4b850a3d28f7f  usr/share/doc/scribe/copyright

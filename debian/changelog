@@ -1,0 +1,5 @@
+scribe (2.0.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Ubuntu <ubuntu@ip-10-191-189-92.ec2.internal>  Wed, 13 Mar 2013 20:25:35 +0000
